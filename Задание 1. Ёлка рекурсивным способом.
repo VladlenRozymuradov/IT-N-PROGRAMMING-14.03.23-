@@ -1,0 +1,31 @@
+
+#include <iostream>
+
+using namespace std;
+
+void rekurs(int n, int &x, int &probel){
+    while (x!=n){
+        for (int i=(x/2); i>=0; i--){
+            for (int k=0; k<i+probel; k++) cout<<" ";
+            for (int j=1; j<=x-i*2; j++){
+                cout<<"*";
+        }
+        cout<<endl;
+        }
+        probel--;
+        x+=2;
+    rekurs (n, x, probel);
+}
+}
+
+
+int main()
+{
+    int n, x=3, probel; 
+    cout<<"Enter numb of max steps >> ";
+    cin>>n; n+=2;
+    probel=n/2;
+    rekurs(n, x, probel);
+    return 0;
+}
+
